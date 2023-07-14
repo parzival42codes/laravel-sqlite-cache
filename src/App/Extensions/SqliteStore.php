@@ -9,7 +9,7 @@ class SqliteStore extends DatabaseStore
 {
     public function __construct()
     {
-        // load the config or use the default
+        /** @var array $config */
         $config = config('cache.stores.sqlite');
 
         // Set the temporary configuration
