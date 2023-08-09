@@ -34,13 +34,13 @@ class LaravelSqliteCacheTable extends Commands
 
         if (! $storage->directoryExists($path)) {
             $storage->makeDirectory($path);
-            $storage->put($path . '/.gitignore', '
+            $storage->put($path.'/.gitignore', '
 *
 !.gitignore
             ');
         }
 
-        $db = new PDO('sqlite:' . storage_path() . $path . '/' . $filename);
+        $db = new PDO('sqlite:'.storage_path().$path.'/'.$filename);
         $db->exec('
 CREATE TABLE `cache` (
    `key` STRING PRIMARY KEY,
