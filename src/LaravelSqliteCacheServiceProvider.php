@@ -25,7 +25,7 @@ class LaravelSqliteCacheServiceProvider extends PackageServiceProvider
 
     public function bootingPackage(): void
     {
-        Cache::extend('sqlite', function ($app) {
+        Cache::extend('sqlite', function () {
             return Cache::repository(new SqliteStore());
         });
     }
